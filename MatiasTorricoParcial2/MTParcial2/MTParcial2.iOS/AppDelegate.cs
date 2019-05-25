@@ -23,7 +23,8 @@ namespace MTParcial2.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            string DbPath = FileAccess.GetLocalFilePath("notes.db3");
+            LoadApplication(new App(DbPath));
 
             return base.FinishedLaunching(app, options);
         }

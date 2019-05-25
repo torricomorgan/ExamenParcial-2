@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using MTParcial2.Model;
 using SQLite;
@@ -33,7 +34,7 @@ namespace MTParcial2.ViewModel
         }
         public String EstadoMensaje;
 
-        public int AddNewVenta(string contents)
+        public int AddNewNote(string contents)
         {
             int result = 0;
 
@@ -51,6 +52,18 @@ namespace MTParcial2.ViewModel
             }
    
             return result;
+        }
+        public IEnumerable<Notes> GetAllNotes()
+        {
+            try
+            {
+                return conec.Table<Notes>();
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return Enumerable.Empty<Notes>();
         }
 
     }

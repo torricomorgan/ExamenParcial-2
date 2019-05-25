@@ -9,10 +9,10 @@ namespace MTParcial2
 {
     public partial class App : Application
     {
-        public App()
+        public App(String filename)
         {
             InitializeComponent();
-
+            NotesViewModel.Inicializador(filename);
             MainPage = new NotesView();
         }
 

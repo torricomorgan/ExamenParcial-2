@@ -24,10 +24,31 @@
                 Text="Insertar Nota"
                 BackgroundColor="Azure"
                 Clicked="BInsertar_Clicked"/>
+            <Button
+                x:Name="bListar"
+                Text="Listar Notas"
+                BackgroundColor="Blue"
+                Clicked="BListar_Clicked"/>
             <Label
                 x:Name="StatusMessage"
                 FontSize="Large"/>
-         
+
+            <ListView x:Name="listanotas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Contents}"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding CreatedDate}"/>
+                                <Label Grid.Column="2"
+                                       Text="{Binding ModifiedDate}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
