@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MTParcial2.Views;
+using MTParcial2.ViewModel;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MTParcial2
@@ -11,7 +13,7 @@ namespace MTParcial2
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NotesView();
         }
 
         protected override void OnStart()
